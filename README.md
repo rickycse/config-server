@@ -1,0 +1,2 @@
+### About
+I wanted to create a server that would send text data to my websites, so instead of making a bunch of commits to change my content, I could easily change them through my server/database. After some more digging, I think I can change my apporach for a CDN instead, but I'll still try to finish this.
