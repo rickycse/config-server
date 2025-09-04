@@ -20,13 +20,34 @@ db = client[MONGO_DB]
 def health():
     return { "Healthy": 200 }
 
-@app.get('/3d-printing-ug')
-def printing_ug():
+def get_content(slug):
     collection = db["printing-guide"]
-    filter = {"slug": "3d-printing-ug"}
+    filter = {
+        "slug": slug
+    }
     result = collection.find_one(filter)
 
     del result["_id"]
     del result["slug"]
 
     return jsonable_encoder(result)
+
+@app.get('/content/static')
+def static_content():
+    return get_content("static")
+
+@app.get('/content/problems')
+def problems():
+    return get_content("problems")
+
+@app.get('/content/safety')
+def safety():
+    return get_content("safety")
+
+@app.get('/content/filaments')
+def filaments():
+    return get_content("filaments")
+
+@app.get('/content/printers')
+def filament():
+    return get_content("printers")
