@@ -1,8 +1,0 @@
-{
-  "routes": [
-    {
-      "src": "^/content/.*$",
-      "dest": "/api/index.py"
-    }
-  ]
-}
