@@ -1,0 +1,6 @@
+{
+  "routes": [
+    { "src": "^/health$", "dest": "/api/index.py" },
+    { "src": "^/content/.*$", "dest": "/api/index.py" }
+  ]
+}
