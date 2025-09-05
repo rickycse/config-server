@@ -35,7 +35,7 @@ def get_content(slug, collection):
 
 ALLOWED_SLUGS = {"static", "problems", "safety", "filaments", "printers", "concerns"}
 
-@app.get("/printer-ug/{slug}", dependencies=[Depends(verify_internal_secret)])
+@app.get("/printing-ug/{slug}", dependencies=[Depends(verify_internal_secret)])
 def get_content_route(slug: str):
     if slug not in ALLOWED_SLUGS:
         raise HTTPException(status_code=404, detail="Not found")
