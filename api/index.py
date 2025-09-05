@@ -24,8 +24,8 @@ db = client[MONGO_DB]
 I'm using a single process rate limit here because Render only allows 1 instance of a webservice when hosted. 
 I plan to switch to Redis once I get multi-instance hosting.
 """
-WINDOW = os.getenv("RATE_WINDOW")
-LIMIT = os.getenv("RATE_LIMIT")
+WINDOW = int(os.getenv("RATE_WINDOW"))
+LIMIT = int(os.getenv("RATE_LIMIT"))
 
 buckets: dict[str, deque[float]] = defaultdict(deque)
 def _key_from_request(req: Request) -> str:
